@@ -94,24 +94,37 @@ function asideSectionTogglerBtn() {
 
 /* ============================== Formulaire de message ============================ */
 document
-  .getElementById("messageForm")
+  .getElementById("contactForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Empêcher le rechargement de la page (action par défaut du bouton submit)
+    event.preventDefault(); // Empêche le rechargement de la page
 
+    // Récupérer les valeurs des champs
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-    if (message.trim()) {
-      // Créer un nouvel élément pour afficher le message
-      const messageElement = document.createElement("div");
-      messageElement.classList.add("message");
-      messageElement.textContent = message;
-
-      // Ajouter le message au conteneur
-      document.getElementById("messageContainer").appendChild(messageElement);
-
-      // Effacer le champ de texte après l'envoi
-      document.getElementById("message").value = "";
-    } else {
-      alert("Le message ne peut pas être vide.");
+    // Validation des champs (facultatif)
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      alert("Tous les champs sont obligatoires.");
+      return;
     }
+
+    // Créer un nouvel élément pour afficher le message
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message");
+    messageElement.innerHTML = `
+    <strong>${name}</strong> (<em>${email}</em>) a écrit :
+    <p><strong>Sujet:</strong> ${subject}</p>
+    <p><strong>Message:</strong> ${message}</p>
+  `;
+
+    // Ajouter le message au conteneur (par exemple, une div avec id "messageContainer")
+    const messageContainer = document.getElementById("messageContainer");
+    if (messageContainer) {
+      messageContainer.appendChild(messageElement);
+    }
+
+    // Réinitialiser le formulaire après soumission
+    document.getElementById("contactForm").reset();
   });
