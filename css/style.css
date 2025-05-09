@@ -539,6 +539,9 @@ h3.my-profession {
   font-weight: 700;
   text-transform: capitalize;
 }
+#about li {
+  color: var(--text-black-900);
+}
 .service .service-item .service-item-inner p {
   font-size: 16px;
   color: var(--text-black-700);
