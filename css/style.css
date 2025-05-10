@@ -598,7 +598,7 @@ h3.my-profession {
 .contact .contact-info-item .icon {
   display: inline-block;
 }
-.contact .contact-info-item .icon .fa {
+.contact .contact-info-item .icon .fa, .icon .fa-brands {
   font-size: 25px;
   color: var(--skin-color);
 }
