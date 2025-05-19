@@ -13,12 +13,14 @@ var typed = new Typed(".typing", {
   BackSpeed: 60,
   loop: true,
 });
+
 /* ============================== Aside ============================ */
 const nav = document.querySelector(".nav"),
   navList = nav.querySelectorAll("li"),
   totalNavList = navList.length,
   allSection = document.querySelectorAll(".section"),
   totalSection = allSection.length;
+
 for (let i = 0; i < totalNavList; i++) {
   const a = navList[i].querySelector("a");
   a.addEventListener("click", function () {
@@ -26,7 +28,6 @@ for (let i = 0; i < totalNavList; i++) {
     for (let j = 0; j < totalNavList; j++) {
       if (navList[j].querySelector("a").classList.contains("active")) {
         addBackSection(j);
-        // allSection[j].classList.add("back-section");
       }
       navList[j].querySelector("a").classList.remove("active");
     }
@@ -37,14 +38,17 @@ for (let i = 0; i < totalNavList; i++) {
     }
   });
 }
+
 function removeBackSection() {
   for (let i = 0; i < totalSection; i++) {
     allSection[i].classList.remove("back-section");
   }
 }
+
 function addBackSection(num) {
   allSection[num].classList.add("back-section");
 }
+
 function showSection(element) {
   for (let i = 0; i < totalSection; i++) {
     allSection[i].classList.remove("active");
@@ -52,6 +56,7 @@ function showSection(element) {
   const target = element.getAttribute("href").split("#")[1];
   document.querySelector("#" + target).classList.add("active");
 }
+
 function updateNav(element) {
   for (let i = 0; i < totalNavList; i++) {
     navList[i].querySelector("a").classList.remove("active");
@@ -64,19 +69,21 @@ function updateNav(element) {
     }
   }
 }
+
 document.querySelector(".hire-me").addEventListener("click", function () {
   const sectionIndex = this.getAttribute("data-section-index");
-  //console.log(sectionIndex);
   showSection(this);
   updateNav(this);
   removeBackSection();
   addBackSection(sectionIndex);
 });
+
 const navTogglerBtn = document.querySelector(".nav-toggler"),
   aside = document.querySelector(".aside");
 navTogglerBtn.addEventListener("click", () => {
   asideSectionTogglerBtn();
 });
+
 function asideSectionTogglerBtn() {
   aside.classList.toggle("open");
   navTogglerBtn.classList.toggle("open");
@@ -84,3 +91,40 @@ function asideSectionTogglerBtn() {
     allSection[i].classList.toggle("open");
   }
 }
+
+/* ============================== Formulaire de message ============================ */
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    // Récupérer les valeurs des champs
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Validation des champs (facultatif)
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      alert("Tous les champs sont obligatoires.");
+      return;
+    }
+
+    // Créer un nouvel élément pour afficher le message
+    const messageElement = document.createElement("div");
+    messageElement.classList.add("message");
+    messageElement.innerHTML = `
+    <strong>${name}</strong> (<em>${email}</em>) a écrit :
+    <p><strong>Sujet:</strong> ${subject}</p>
+    <p><strong>Message:</strong> ${message}</p>
+  `;
+
+    // Ajouter le message au conteneur (par exemple, une div avec id "messageContainer")
+    const messageContainer = document.getElementById("messageContainer");
+    if (messageContainer) {
+      messageContainer.appendChild(messageElement);
+    }
+
+    // Réinitialiser le formulaire après soumission
+    document.getElementById("contactForm").reset();
+  });
