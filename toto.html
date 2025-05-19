@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/JavaScript" src="./script.js"></script>
+</head>
+<body>
+  <script>
+    console.log("Hello World");
+  </script>
+  <form action="reponse.html" method="post">
+    <fieldset>
+      <legend>veuillez remplir le formulaire</legend>
+      <p>
+        <label for="title1">Entrez votre nom</label>
+        <input type="text" id="title1">
+      </p>
+      <p>
+        <label for="title2">Ecrire votre mail</label>
+        <input type="text" id="title2">
+
+      </p>
+      <p>
+        <input type="submit" value="valider" onclick="verif(event)">
+        <input type="reset" value="envoyer">
+      </p>
+    </fieldset>
+  </form>
+  
+</body>
+</html>
