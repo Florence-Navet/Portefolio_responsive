@@ -93,38 +93,38 @@ function asideSectionTogglerBtn() {
 }
 
 /* ============================== Formulaire de message ============================ */
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Empêche le rechargement de la page
+// document
+//   .getElementById("contactForm")
+//   .addEventListener("submit", function (event) {
+// event.preventDefault(); // Empêche le rechargement de la page
 
-    // Récupérer les valeurs des champs
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const subject = document.getElementById("subject").value;
-    const message = document.getElementById("message").value;
+// Récupérer les valeurs des champs
+// const name = document.getElementById("name").value;
+// const email = document.getElementById("email").value;
+// const subject = document.getElementById("subject").value;
+// const message = document.getElementById("message").value;
 
-    // Validation des champs (facultatif)
-    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
-      alert("Tous les champs sont obligatoires.");
-      return;
-    }
+// Validation des champs (facultatif)
+// if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+//   alert("Tous les champs sont obligatoires.");
+//   return;
+// }
 
-    // Créer un nouvel élément pour afficher le message
-    const messageElement = document.createElement("div");
-    messageElement.classList.add("message");
-    messageElement.innerHTML = `
-    <strong>${name}</strong> (<em>${email}</em>) a écrit :
-    <p><strong>Sujet:</strong> ${subject}</p>
-    <p><strong>Message:</strong> ${message}</p>
-  `;
+// Créer un nouvel élément pour afficher le message
+//   const messageElement = document.createElement("div");
+//   messageElement.classList.add("message");
+//   messageElement.innerHTML = `
+//   <strong>${name}</strong> (<em>${email}</em>) a écrit :
+//   <p><strong>Sujet:</strong> ${subject}</p>
+//   <p><strong>Message:</strong> ${message}</p>
+// `;
 
-    // Ajouter le message au conteneur (par exemple, une div avec id "messageContainer")
-    const messageContainer = document.getElementById("messageContainer");
-    if (messageContainer) {
-      messageContainer.appendChild(messageElement);
-    }
+// // Ajouter le message au conteneur (par exemple, une div avec id "messageContainer")
+// const messageContainer = document.getElementById("messageContainer");
+// if (messageContainer) {
+//   messageContainer.appendChild(messageElement);
+// }
 
-    // Réinitialiser le formulaire après soumission
-    document.getElementById("contactForm").reset();
-  });
+// Réinitialiser le formulaire après soumission
+//   document.getElementById("contactForm").reset();
+// });
