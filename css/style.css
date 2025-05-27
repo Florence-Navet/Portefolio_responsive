@@ -543,7 +543,8 @@ h3.my-profession {
 #about li {
   color: var(--text-black-900);
 }
-.service .service-item .service-item-inner p {
+.service .service-item .service-item-inner p,
+a {
   font-size: 16px;
   color: var(--text-black-700);
   line-height: 25px;
@@ -598,7 +599,8 @@ h3.my-profession {
 .contact .contact-info-item .icon {
   display: inline-block;
 }
-.contact .contact-info-item .icon .fa, .icon .fa-brands {
+.contact .contact-info-item .icon .fa,
+.icon .fa-brands {
   font-size: 25px;
   color: var(--skin-color);
 }
