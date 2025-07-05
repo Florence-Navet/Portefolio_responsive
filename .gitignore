@@ -137,3 +137,7 @@ dist
 
 .toto.html*
 reponse.html*
+
+
+#tous les fichies modules
+node_modules
