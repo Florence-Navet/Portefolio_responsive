@@ -4,7 +4,7 @@ var typed = new Typed(".typing", {
     "",
     "developpeuse Web",
     "developpeuse logiciel",
-    "en recherche d'alternance",
+    "debutant une alternance",
     "Etudiante",
     "motivée",
     "adepte des bonnes pratiques",
