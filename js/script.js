@@ -2,9 +2,9 @@
 var typed = new Typed(".typing", {
   strings: [
     "",
-    "developpeuse Web",
+    // "developpeuse Web",
     "developpeuse logiciel",
-    "debutante pour une nouvelle alternance",
+    "en alternance pour 2 ans chez NGE",
     "Etudiante",
     "motivée",
     "adepte des bonnes pratiques",
